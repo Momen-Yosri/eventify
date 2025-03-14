@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
 
+import 'screens/home/home_page.dart';
 import 'screens/landing/first_landing_pages.dart';
 
 void main() {
@@ -15,12 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
      debugShowCheckedModeBanner: false,
       title: 'Evently',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute:  FirstOnBoardingScreen.routeName,
+      
+      initialRoute:  HomeScreen.routeName,
       routes: {
         FirstOnBoardingScreen.routeName: (context) => const FirstOnBoardingScreen(),
+        HomeScreen.routeName: (context) =>  HomeScreen(),
       },
     );
   }
