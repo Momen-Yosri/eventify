@@ -1,3 +1,4 @@
+import 'package:eventify/screens/home/widgets/custom_header_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             Container(color: Color(0xffE0FF4F),
               child: Column(
                 children: [
-                  HeaderSection(),
+                  CustomHeaderSection(),
               CategoryFilters(),
                 ],
               ),
@@ -31,39 +32,6 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class HeaderSection extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text("Welcome Back ✨", style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500, color: Color(0xffE0FF4F))),
-          Text("Mo’men Yosri", style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold, color: Color(0xffE0FF4F))),
-          Row(
-            children: [
-              Icon(Icons.location_on, size: 16.sp, color: Color(0xffE0FF4F)),
-              Text(" Cairo, Egypt", style: TextStyle(fontSize: 16.sp, color: Color(0xffE0FF4F))),
-              Spacer(),
-              Icon(Icons.wb_sunny, color: Color(0xffE0FF4F)),
-              SizedBox(width: 10.w),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(), 
-                  padding: EdgeInsets.all(8.w),
-                  backgroundColor: Color(0xffE0FF4F),
-                ),
-                onPressed: () {},
-                child: Text("EN", style: TextStyle(color: Color(0xff00272B))),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class CategoryFilters extends StatelessWidget {
   @override
