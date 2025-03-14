@@ -5,10 +5,10 @@ class FirstOnBoardingScreen extends StatefulWidget {
    const FirstOnBoardingScreen({super.key});
 
   @override
-  _FirstOnBoardingScreenState createState() => _FirstOnBoardingScreenState();
+  FirstOnBoardingScreenState createState() => FirstOnBoardingScreenState();
 }
 
-class _FirstOnBoardingScreenState extends State<FirstOnBoardingScreen> {
+class FirstOnBoardingScreenState extends State<FirstOnBoardingScreen> {
   bool isDarkMode = false;
   int selectedLanguage = 0; // 0 for English, 1 for Arabic
 
