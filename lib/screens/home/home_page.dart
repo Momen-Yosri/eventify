@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'widgets/bottom_navbar.dart';
+
 
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
   static const String routeName = "HomeScreen";
+  HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,8 +15,14 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            HeaderSection(),
-            CategoryFilters(),
+            Container(color: Color(0xffE0FF4F),
+              child: Column(
+                children: [
+                  HeaderSection(),
+              CategoryFilters(),
+                ],
+              ),
+            ),
             Expanded(child: EventList()),
           ],
         ),
@@ -131,21 +139,3 @@ class EventCard extends StatelessWidget {
   }
 }
 
-class BottomNavBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: Color(0xff00272B),
-      selectedItemColor: Color(0xffE0FF4F),
-      unselectedItemColor: Colors.white,
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.map), label: "Map"),
-        BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40.sp, color: Color(0xffE0FF4F)), label: ""),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Love"),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
-      ],
-    );
-  }
-}
