@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -26,23 +27,27 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Welcome Back ✨", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-          Text("Mo’men Yosri", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+          Text("Welcome Back ✨", style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500, color: Color(0xffE0FF4F))),
+          Text("Mo’men Yosri", style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold, color: Color(0xffE0FF4F))),
           Row(
             children: [
-              Icon(Icons.location_on, size: 16),
-              Text(" Cairo, Egypt", style: TextStyle(fontSize: 16)),
+              Icon(Icons.location_on, size: 16.sp, color: Color(0xffE0FF4F)),
+              Text(" Cairo, Egypt", style: TextStyle(fontSize: 16.sp, color: Color(0xffE0FF4F))),
               Spacer(),
-              Icon(Icons.wb_sunny),
-              SizedBox(width: 10),
+              Icon(Icons.wb_sunny, color: Color(0xffE0FF4F)),
+              SizedBox(width: 10.w),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(shape: CircleBorder(), padding: EdgeInsets.all(8)),
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(), 
+                  padding: EdgeInsets.all(8.w),
+                  backgroundColor: Color(0xffE0FF4F),
+                ),
                 onPressed: () {},
-                child: Text("EN"),
+                child: Text("EN", style: TextStyle(color: Color(0xff00272B))),
               ),
             ],
           ),
@@ -56,7 +61,7 @@ class CategoryFilters extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -76,9 +81,12 @@ class FilterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(shape: StadiumBorder()),
+      style: ElevatedButton.styleFrom(
+        shape: StadiumBorder(),
+        backgroundColor: Color(0xffE0FF4F),
+      ),
       onPressed: () {},
-      child: Text(label),
+      child: Text(label, style: TextStyle(color: Color(0xff00272B))),
     );
   }
 }
@@ -87,7 +95,7 @@ class EventList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.w),
       children: [
         EventCard(title: "Birthday", date: "21 Nov", description: "This is a Birthday Party"),
         EventCard(title: "Meeting", date: "22 Nov", description: "Meeting for Updating The Development Method"),
@@ -104,17 +112,18 @@ class EventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.only(bottom: 16.0),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+      color: Color(0xff00272B),
+      margin: EdgeInsets.only(bottom: 16.h),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(date, style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.yellow)),
-            Text(title, style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            SizedBox(height: 5),
-            Text(description, style: TextStyle(fontSize: 16)),
+            Text(date, style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Color(0xffE0FF4F))),
+            Text(title, style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold, color: Color(0xffE0FF4F))),
+            SizedBox(height: 5.h),
+            Text(description, style: TextStyle(fontSize: 16.sp, color: Color(0xffE0FF4F))),
           ],
         ),
       ),
@@ -127,12 +136,13 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.yellow,
+      backgroundColor: Color(0xff00272B),
+      selectedItemColor: Color(0xffE0FF4F),
       unselectedItemColor: Colors.white,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
         BottomNavigationBarItem(icon: Icon(Icons.map), label: "Map"),
-        BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40), label: ""),
+        BottomNavigationBarItem(icon: Icon(Icons.add_circle, size: 40.sp, color: Color(0xffE0FF4F)), label: ""),
         BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Love"),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
       ],
